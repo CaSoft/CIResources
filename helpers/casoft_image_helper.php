@@ -1,7 +1,12 @@
 <?php
+/**
+ * casoft_image_helper.php
+ *
+ * Helpers for images
+ */
 
 /**
- * casoft_imaga_get_area
+ * casoft_image_get_area
  *
  * This function gets an area in the middle if an image and resizes it
  * 
@@ -12,12 +17,13 @@
  * @param integer   $area_height        The height of the final image
  * @return boolean
  */
-function caimg_get_area($images_path, $image_name, $new_image_prefix, $area_width, $area_height) {
+function casoft_image_get_area($images_path, $image_name, $new_image_prefix, $area_width, $area_height) {
     // TODO check if image_lib methods ran ok before returnin TRUE
     // CI Instance
     $CI =& get_instance();
 
-    $CI->output->enable_profiler(TRUE);
+    // How long does it take to run?
+    //$CI->output->enable_profiler(TRUE);
     
     $original_image = $images_path . $image_name;
 
