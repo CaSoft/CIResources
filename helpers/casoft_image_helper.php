@@ -2,13 +2,30 @@
 /**
  * casoft_image_helper.php
  *
+ * EN
  * Helpers for images
+ *
+ * PT_BR
+ * Helpers para imagens
+ *
+ * @author Evaldo Junior <junior@casoft.info>
+ * @version 0.1
+ * @license GNU GPL v3
+ *
+ * Changelog
+ * 
+ * Version 0.1
+ *  - casoft_image_get_area
  */
 
 /**
  * casoft_image_get_area
  *
- * This function gets an area in the middle if an image and resizes it
+ * EN
+ * This function gets an area in the middle of an image and resizes it
+ *
+ * PT_BR
+ * Esta função pega a área no meio de uma imagem e a redimensiona de acordo com o tamanho informado
  * 
  * @param string    $images_path        Path to the images dir
  * @param string    $image_name         Original image's name
