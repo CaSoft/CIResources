@@ -1,54 +1,60 @@
 <?php
 /**
- * Helper para data e hora
+ * Helper for date, time and datetime
  *
- * Aqui há funções para auxiliar na formatação de data e hora
+ * Functions to help formating dates
+ *
+ * Version 0.1
+ *   - Copied from a project
+ *
+ * Version 0.2
+ *   - Refactored source
+ *   - Translation into English
  *
  * @author Evaldo Junior <junior@casoft.info>
- * @version 0.1
- * @package moedas
+ * @version 0.2
  * @subpackage helpers
  */
 
 /**
- * Esta função formata uma data no formado AAAA-MM-DD para o formato DD/MM/AAAA
+ * This function formats a date from YYYY-MM-DD to DD/MM/YYYY
  *
- * @param string $data Data no formado AAAA-MM-DD
+ * @param string $date String of a date using YYYY-DD-DD format
  * @return string
  */
-function date_to_brazil($data) {
-    return substr($data, 8, 2).'/'.substr($data, 5, 2).'/'.substr($data, 0, 4);
+function casoft_date_to_brazil($date) {
+    return substr($date, 8, 2).'/'.substr($date, 5, 2).'/'.substr($date, 0, 4);
 }
 
 /**
- * Esta função formata uma data no formado DD/MM/AAAA para o formato AAAA-MM-DD
- * use esta função para inserir datas no MySQL
+ * This function formats a date from DD/MM/YYYY (Brazilian date format) to YYYY-MM-DD
+ * Usually use to format dates before sending to database
  *
- * @param string $data Data no formato DD/MM/AAAA
+ * @param string $date
  * @return string
  */
-function brazil_to_date($data) {
-    return substr($data, 6, 4).'-'.substr($data, 3, 2).'-'.substr($data, 0, 2);
+function casoft_brazil_to_date($date) {
+    return substr($date, 6, 4).'-'.substr($date, 3, 2).'-'.substr($date, 0, 2);
 }
 
 /**
- * Esta função retorna apenas o dia de uma data no formato DD/MM/AAAA
+ * This function returns only the day of a date (format DD/MM/YYYY)
  *
- * @param string $data Data no formato DD/MM/AAAA
- * @return string Apenas o dia
+ * @param string $date
+ * @return string
  */
-function pegar_dia($data) {
-    return substr($data, 0, 2);
+function casoft_get_day($date) {
+    return substr($date, 0, 2);
 }
 
 /**
- * Esta função retorna apenas o mês de uma data no formato DD/MM/AAAA
+ * This function returns only the month of a date (forma DD/MM/YYYY)
  *
- * @param string $data Data no formato DD/MM/AAAA
- * @return string Apenas o mês
+ * @param string $date
+ * @return string
  */
-function pegar_mes($data) {
-    return substr($data, 3, 2);
+function casoft_get_month($date) {
+    return substr($date, 3, 2);
 }
 
 /**
@@ -78,7 +84,7 @@ function extract_hour_from_datetime($datahora, $pega_segundos = false) {
  * @param integer   $mes    Número do mês. Ex: 3: Março
  * @return string   Nome do mês
  */
-function nome_mes($mes) {
+function casoft_pegar_nome_mes($mes) {
     $meses = array(
         'Janeiro',
         'Fevereiro',
@@ -123,7 +129,7 @@ function nome_mes($mes) {
                     $dia_semana = "Terça-feira";
                 break;
 
-		case"3": 
+		case"3":
                     $dia_semana = "Quarta-feira";
                 break;
 
@@ -139,7 +145,7 @@ function nome_mes($mes) {
                     $dia_semana = "Sábado";
                 break;
 	}
-        
+
 	return $dia_semana;
 }
 
